@@ -22,4 +22,5 @@
     <string name="ingress">Ingresar</string>
     <string name="logo">Logo</string>
     <string name="registry">Registrar</string>
+    <string name="title_activity_home">HomeActivity</string>
 </resources>
