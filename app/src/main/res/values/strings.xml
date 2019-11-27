@@ -15,5 +15,12 @@
     <string name="menu_send">Send</string>
     <string name="preferences">preferences</string>
     <string name="preference_file_key">preferences_file</string>
+    <string name="email">email</string>
+    <string name="password">comtraseña</string>
+    <string name="name">name</string>
+    <string name="last_name">last name</string>
+    <string name="ingress">Ingresar</string>
+    <string name="logo">Logo</string>
+    <string name="registry">Registrar</string>
     <string name="title_activity_home">HomeActivity</string>
 </resources>
