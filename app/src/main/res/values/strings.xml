@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TaskPlanner</string>
+    <string name="app_name">HayParking</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -23,4 +23,5 @@
     <string name="logo">Logo</string>
     <string name="registry">Registrar</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="registry_view">Registrate</string>
 </resources>
