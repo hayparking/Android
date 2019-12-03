@@ -20,6 +20,14 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        app:menu="@menu/activity_main_drawer" >
+
+        <Button
+            android:id="@+id/button_mapa"
+            android:layout_width="149dp"
+            android:layout_height="wrap_content"
+            android:text="Mapa"
+            android:textColorHighlight="#009688" />
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
