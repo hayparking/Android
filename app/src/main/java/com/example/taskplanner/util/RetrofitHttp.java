@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitHttp {
     private Retrofit retrofit;
-    private final String BASE_URL ="agregamos la URL de la API";
+    private final String BASE_URL ="http://10.0.2.2:8080/";
 
     /**
      * Conexcion a la api para consumir servicios
