@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PatternMatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,8 @@ import com.example.taskplanner.util.RetrofitHttp;
 import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ExecutorService;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import retrofit2.Response;
 
@@ -29,7 +32,8 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     EditText email, password;
     TextView registry;
-    String Uemail;
+
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,18 +59,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(email.length() == 0){
                     email.setError("Ingrese email");
+
+                    //isEmailValid(email.getText().toString());
                 }
-                else if (password.length() == 0 ){
+                if (password.length() == 0){
                     password.setError("Ingrese contraseña");
-                } else{
-                    Uemail = email.getText().toString();
+                }
+                if (email.length() != 0 && password.length() != 0) {
+                    login(email.getText().toString(), password.getText().toString());
 
-                    login(Uemail);
-                    Intent intent = new Intent (v.getContext(), HomeActivity.class);
-                    startActivityForResult(intent, 0);
-
-                    Intent intentt = new Intent(getApplicationContext(),MapsActivity.class);
-                    startActivity(intentt);
+                    intent = new Intent(getApplicationContext(),MapsActivity.class);
                 }
             }
         });
@@ -74,16 +76,25 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void login (String email){
+    public void login (final String email, final String passwd){
         executorService.execute(new Runnable() {
             @Override
             public void run() {
                 try {
                     userService = retrofitHttp.getRetrofit().create(UserService.class);
-                    Response<User> userResponse = userService.getUserByEmail(Uemail).execute();
+                    Response<User> userResponse = userService.getUserByEmail(email).execute();
                     if (userResponse.isSuccessful()) {
                         User user = userResponse.body();
+                        if (user.getPassword().equals(passwd)) {
+                            startActivity(intent);
+                        }
+                        else {
+                            password.setError("Contraseña o Usuario erroneo");
+                        }
                         Log.d("nombre usuario",user.getName());
+                    }
+                    else {
+                        password.setError("Contraseña o Usuario erroneo");
                     }
                     Log.d("holaaa usuario ", "onClick: "+ userResponse.body().getEmail());
                 } catch (IOException e) {
@@ -91,5 +102,12 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public static boolean isEmailValid(String email) {
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 }

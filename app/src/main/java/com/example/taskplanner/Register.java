@@ -74,10 +74,10 @@ public class Register extends AppCompatActivity {
                     emailT = email.getText().toString();
                     passwordT = password.getText().toString();
                     passwordCOnfirmT = password.getText().toString();
-                    direccionT = "calle 80";
+                    direccionT = "Calle 80 #72 03";
+                    myIntent = new Intent(v.getContext(), LoginActivity.class);
                     register(v);
                     //startActivity(new Intent(v.getContext(), HomeActivity.class));
-                    myIntent = new Intent(v.getContext(), HomeActivity.class);
                 }
             }
         });
