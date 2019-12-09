@@ -41,11 +41,12 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        retrofitHttp = new RetrofitHttp();
         userService = retrofitHttp.getRetrofit().create(UserService.class);
 
         name = (EditText) findViewById(R.id.nameR);
         last_name = (EditText) findViewById(R.id.lastNameR);
-        email = (EditText) findViewById(R.id.nameR);
+        email = (EditText) findViewById(R.id.emailR);
         password = (EditText) findViewById(R.id.passwordR);
         registry = (Button) findViewById(R.id.registry);
 
@@ -76,7 +77,7 @@ public class Register extends AppCompatActivity {
                     direccionT = "calle 80";
                     register(v);
                     //startActivity(new Intent(v.getContext(), HomeActivity.class));
-                    Intent myIntent = new Intent(v.getContext(), HomeActivity.class);
+                    myIntent = new Intent(v.getContext(), HomeActivity.class);
                 }
             }
         });
@@ -92,7 +93,7 @@ public class Register extends AppCompatActivity {
                     if (userResponse.isSuccessful()) {
                         startActivity(myIntent);
                     }
-                    Log.d("holaaa usuario ", "onClick: "+ userResponse.body().getName());
+                    Log.d("hola usuario ", "onClick: "+ userResponse.body().getName());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
