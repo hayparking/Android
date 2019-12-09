@@ -4,39 +4,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/latIni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:autofillHints=""
+                android:background="@drawable/input_style"
                 android:ems="10"
                 android:hint="@string/latIniName"
                 android:inputType="number"
+                android:textCursorDrawable="@drawable/input_cursor_style"
                 tools:targetApi="o" />
 
             <EditText
                 android:id="@+id/longIni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:autofillHints=""
+                android:background="@drawable/input_style"
                 android:ems="10"
                 android:hint="@string/longIniName"
                 android:inputType="numberSigned"
+                android:textCursorDrawable="@drawable/input_cursor_style"
                 tools:targetApi="o" />
 
         </LinearLayout>
@@ -44,41 +60,55 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
             android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/LatFin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:autofillHints=""
+                android:background="@drawable/input_style"
                 android:ems="10"
                 android:hint="@string/LatFinName"
                 android:inputType="number"
+                android:textCursorDrawable="@drawable/input_cursor_style"
                 tools:targetApi="o" />
 
             <EditText
                 android:id="@+id/longFin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
+                android:background="@drawable/input_style"
                 android:ems="10"
                 android:hint="@string/longFinName"
                 android:importantForAutofill="no"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textCursorDrawable="@drawable/input_cursor_style" />
         </LinearLayout>
 
         <Button
             android:id="@+id/buscarCoor"
             android:layout_width="match_parent"
             android:layout_height="37dp"
-            android:text="buscar"></Button>
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_style"
+            android:text="@string/buscarMapName"
+            android:textColor="@color/colorText"
+            android:visibility="visible"></Button>
 
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="604dp"
+            android:layout_height="match_parent"
             tools:context=".MapsActivity" />
 
     </LinearLayout>

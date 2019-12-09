@@ -29,6 +29,8 @@
     <string name="longFinName">longFin</string>
     <string name="latIniName">latIni</string>
     <string name="longIniName">longIni</string>
+    <string name="latitud">Latitud</string>
+    <string name="longitud">Longitud</string>
     <string name="encuentra_tu_parqueadero">ENCUENTRA TU PARQUEADERO</string>
     <string name="ubicaci_n">Ubicación</string>
     <string name="destino">Destino</string>

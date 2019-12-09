@@ -53,15 +53,18 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#03A9F4"
+            android:background="@color/colorButton"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="@string/encuentra_tu_parqueadero"
+            android:textColor="@color/colorText"
             app:autoSizeTextType="uniform" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="349dp"
-        android:layout_height="277dp"
+        android:layout_height="210dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
@@ -71,68 +74,98 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" >
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="118dp"
+                android:layout_height="70dp"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/txtLatIni"
                     android:layout_width="wrap_content"
-                    android:layout_height="82dp"
-                    android:hint="Latitud"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="3dp"
                     android:layout_weight="1"
+                    android:background="@drawable/input_style"
                     android:ems="10"
-                    android:inputType="numberSigned" />
+                    android:hint="@string/latitud"
+                    android:importantForAutofill="no"
+                    android:inputType="numberSigned"
+                    android:textCursorDrawable="@drawable/input_cursor_style" />
 
                 <EditText
                     android:id="@+id/txtLongIni"
                     android:layout_width="wrap_content"
-                    android:layout_height="82dp"
-                    android:hint="Longitud"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="3dp"
                     android:layout_weight="1"
+                    android:background="@drawable/input_style"
                     android:ems="10"
-                    android:inputType="numberSigned" />
+                    android:hint="@string/longitud"
+                    android:importantForAutofill="no"
+                    android:inputType="numberSigned"
+                    android:textCursorDrawable="@drawable/input_cursor_style" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="103dp"
+                android:layout_height="70dp"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/txtLatFin"
                     android:layout_width="wrap_content"
-                    android:layout_height="65dp"
-                    android:hint="Latitud"
-                    android:onClick="onClick"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="3dp"
                     android:layout_weight="1"
+                    android:background="@drawable/input_style"
                     android:ems="10"
-                    android:inputType="numberSigned" />
+                    android:hint="@string/latitud"
+                    android:importantForAutofill="no"
+                    android:inputType="numberSigned"
+                    android:onClick="onClick"
+                    android:textCursorDrawable="@drawable/input_cursor_style" />
 
                 <EditText
                     android:id="@+id/txtLongFin"
                     android:layout_width="wrap_content"
-                    android:layout_height="66dp"
-                    android:hint="Longitud"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="3dp"
                     android:layout_weight="1"
+                    android:background="@drawable/input_style"
                     android:ems="10"
-                    android:inputType="numberSigned" />
+                    android:hint="@string/longitud"
+                    android:importantForAutofill="no"
+                    android:inputType="numberSigned"
+                    android:textCursorDrawable="@drawable/input_cursor_style" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/btnObtenerCoordenadas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout"
-                android:text="Button" />
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/button_style"
+                android:text="@string/menu_send"
+                android:textColor="@color/colorText"
+                android:textCursorDrawable="@drawable/input_cursor_style" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
