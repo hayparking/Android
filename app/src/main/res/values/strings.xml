@@ -25,4 +25,8 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="registry_view">Registrate</string>
     <string name="title_activity_maps">Map</string>
+    <string name="LatFinName">LatFin</string>
+    <string name="longFinName">longFin</string>
+    <string name="latIniName">latIni</string>
+    <string name="longIniName">longIni</string>
 </resources>

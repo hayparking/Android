@@ -64,6 +64,9 @@ public class LoginActivity extends AppCompatActivity {
                     login(Uemail);
                     Intent intent = new Intent (v.getContext(), HomeActivity.class);
                     startActivityForResult(intent, 0);
+
+                    Intent intentt = new Intent(getApplicationContext(),MapsActivity.class);
+                    startActivity(intentt);
                 }
             }
         });
