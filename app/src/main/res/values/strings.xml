@@ -29,4 +29,10 @@
     <string name="longFinName">longFin</string>
     <string name="latIniName">latIni</string>
     <string name="longIniName">longIni</string>
+    <string name="encuentra_tu_parqueadero">ENCUENTRA TU PARQUEADERO</string>
+    <string name="ubicaci_n">Ubicación</string>
+    <string name="destino">Destino</string>
+    <string name="buscarMapName">Buscar</string>
+    <string name="mis_viajes">Mis Viajes</string>
+    <string name="todo">TODO</string>
 </resources>
