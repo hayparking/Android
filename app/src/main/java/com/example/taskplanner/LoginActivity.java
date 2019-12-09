@@ -33,8 +33,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText email, password;
     TextView registry;
 
-    Intent intent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +65,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 if (email.length() != 0 && password.length() != 0) {
                     login(email.getText().toString(), password.getText().toString());
-
-                    intent = new Intent(getApplicationContext(),MapsActivity.class);
                 }
             }
         });
@@ -83,10 +79,13 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     userService = retrofitHttp.getRetrofit().create(UserService.class);
                     Response<User> userResponse = userService.getUserByEmail(email).execute();
+                    System.out.println("===========================================================");
+                    System.out.println(userResponse);
+                    System.out.println("===========================================================");
                     if (userResponse.isSuccessful()) {
                         User user = userResponse.body();
                         if (user.getPassword().equals(passwd)) {
-                            startActivity(intent);
+                            startActivity(new Intent(getApplicationContext(),MapsActivity.class));
                         }
                         else {
                             password.setError("Contraseña o Usuario erroneo");
